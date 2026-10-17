@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QueueLess</title><link rel="stylesheet" href="css/style.css"></head><body>
+<header><div class="wrap"><nav><a class="logo" href="index.html">Queue<span>Less</span></a>
+<div class="links"><a href="doctors.html">Find a doctor</a><a href="appointments.html">My appointments</a><a href="queue.html">Track queue</a></div></nav></div></header>
+<main><div class="hero"><div class="wrap">
+<h1>Book your doctor.<br>Skip the waiting room.</h1>
+<p>Find a doctor, pick a time, get a digital token and know when it's your turn.</p>
+<form class="search" action="doctors.html">
+<select name="spec" id="spec"><option value="">All specializations</option></select>
+<input name="q" placeholder="Doctor or clinic name">
+<button class="btn">Find a Doctor</button></form></div></div>
+<section><div class="wrap"><h2>Featured doctors</h2>
+<div id="featured" class="grid"><p class="muted">Loading doctors…</p></div></div></section>
+</main>
+<footer><div class="wrap">QueueLess is a college prototype. All doctors and clinics shown are fictional demo listings.</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/config.js"></script><script src="js/supabase.js"></script>
+<script>
+(async()=>{const {data,error}=await fetchDoctors();const el=document.getElementById("featured");
+if(error){el.innerHTML='<div class="notice">'+error+'</div>';return;}
+[...new Set(data.map(d=>d.specialization))].sort().forEach(s=>document.getElementById("spec").insertAdjacentHTML("beforeend","<option>"+s+"</option>"));
+el.innerHTML=data.slice(0,3).map(d=>`<article class="card"><span class="badge">Demo listing</span><h3>${d.name}</h3><p class="muted">${d.specialization} · ${d.clinic_name}</p><p><strong>₹${d.consultation_fee}</strong></p><a class="btn" href="book.html?doctor=${d.id}">Book Appointment</a></article>`).join("");})();
+</script></body></html>

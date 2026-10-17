@@ -1,0 +1,13 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Find a doctor · QueueLess</title><link rel="stylesheet" href="css/style.css"></head><body>
+<header><div class="wrap"><nav><a class="logo" href="index.html">Queue<span>Less</span></a>
+<div class="links"><a href="doctors.html">Find a doctor</a><a href="appointments.html">My appointments</a><a href="queue.html">Track queue</a></div></nav></div></header>
+<main><section><div class="wrap"><h2>Find a doctor</h2>
+<div class="search"><input id="q" placeholder="Search by doctor or clinic name">
+<select id="spec"><option value="">All specializations</option></select></div>
+<div id="msg" class="notice" hidden></div>
+<div id="doctor-list" class="grid" style="margin-top:20px"><p class="muted">Loading doctors…</p></div>
+</div></section></main>
+<footer><div class="wrap">QueueLess is a college prototype. All doctors and clinics shown are fictional demo listings.</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/config.js"></script><script src="js/supabase.js"></script><script src="js/doctors.js"></script></body></html>

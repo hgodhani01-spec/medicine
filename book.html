@@ -1,0 +1,17 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Book appointment · QueueLess</title><link rel="stylesheet" href="css/style.css"></head><body>
+<header><div class="wrap"><nav><a class="logo" href="index.html">Queue<span>Less</span></a>
+<div class="links"><a href="doctors.html">Find a doctor</a><a href="appointments.html">My appointments</a><a href="queue.html">Track queue</a></div></nav></div></header>
+<main><section><div class="wrap formbox">
+<h2>Book an appointment</h2><div id="msg" class="error" hidden></div>
+<div id="doc" class="card"><p class="muted">Loading doctor…</p></div>
+<form id="f" hidden novalidate>
+<label for="date">Date</label><input type="date" id="date">
+<label>Time slot</label><div id="slots" class="slots"><p class="muted">Choose a date first.</p></div>
+<label for="name">Your name</label><input id="name" maxlength="60" autocomplete="off" placeholder="Demo patient name">
+<label for="phone">Mobile number (10 digits)</label><input id="phone" inputmode="numeric" placeholder="9876543210">
+<p><button class="btn" id="go">Confirm appointment</button></p></form>
+</div></section></main>
+<footer><div class="wrap">QueueLess is a college prototype. All doctors and clinics shown are fictional demo listings. Use only fake patient details.</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/config.js"></script><script src="js/supabase.js"></script><script src="js/book.js"></script></body></html>
